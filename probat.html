@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ED Industrial and the PROBAT Group - Mechanical Support for Food Processing Facilities</title>
+<meta name="description" content="ED Industrial is part of the PROBAT Group, world leaders in food processing machinery. We support line installs, mechanical service, and shutdown support for food processing facilities across the GTA and Southern Ontario.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0f1a2e">
+<link rel="icon" href="./assets/logo-ed-industrial.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700;1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/homepage.css">
+<style>
+/* Service Hero */
+.service-hero {
+  background: #0F1A2E;
+  color: #E8E5DF;
+  padding: 160px 48px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.service-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(59,130,184,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,184,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+.service-hero .container { position: relative; z-index: 2; }
+.service-hero .breadcrumb {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #9DA3AD;
+  margin-bottom: 20px;
+}
+.service-hero .breadcrumb a {
+  color: #9DA3AD;
+  transition: color 0.2s;
+}
+.service-hero .breadcrumb a:hover { color: #E8E5DF; }
+.service-hero .breadcrumb .sep { margin: 0 10px; opacity: 0.5; }
+.service-hero h1 {
+  font-family: var(--font-head);
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.service-hero .hero-accent {
+  color: var(--accent);
+}
+
+/* Probat Content */
+.probat-content {
+  background: var(--bg);
+  padding: 64px 48px;
+}
+.probat-layout {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.probat-section {
+  margin-bottom: 48px;
+}
+.probat-section h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  margin-bottom: 16px;
+  letter-spacing: -0.015em;
+}
+.probat-section p {
+  font-size: 16px;
+  color: var(--muted-l);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.probat-certs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+.probat-cert {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(196,43,32,0.08);
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 6px;
+}
+
+/* Service CTA */
+.service-cta {
+  background: #0F1A2E;
+  color: #E8E5DF;
+  text-align: center;
+  padding: 64px 48px;
+}
+.service-cta h2 {
+  font-size: clamp(28px, 3.5vw, 44px);
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+}
+.service-cta p {
+  font-size: 16px;
+  color: #9DA3AD;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 32px;
+}
+.service-cta .cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer { margin-top: 0; }
+
+@media (max-width: 1024px) {
+  .service-hero { padding: 140px 32px 52px; }
+  .probat-content { padding: 52px 32px; }
+  .service-cta { padding: 52px 32px; }
+}
+@media (max-width: 768px) {
+  .service-hero { padding: 120px 20px 44px; }
+  .probat-content { padding: 44px 20px; }
+  .service-cta { padding: 44px 20px; }
+  .probat-certs { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<nav class="nav">
+<div class="nav-inner">
+<a href="edindustrial.html" class="nav-logo"><img src="./assets/logo-ed-industrial.png" alt="ED Industrial"></a>
+<div class="nav-links">
+<a href="edindustrial.html">Home</a>
+<a href="edindustrial.html#services">Services</a>
+<a href="edindustrial.html#industries">Industries</a>
+<a href="edindustrial.html#areas">Areas</a>
+<a href="probat.html" class="nav-probat">PROBAT</a>
+<a href="media.html">Media</a>
+<a href="edindustrial.html#contact">Contact</a>
+</div>
+<div class="nav-right">
+<a href="tel:5198561214" class="nav-phone">(519) 856-1214</a>
+<a href="edindustrial.html#contact" class="btn btn-primary nav-cta">Request a quote</a>
+</div>
+</div>
+</nav>
+
+<main id="main-content">
+
+<section class="service-hero">
+<div class="container">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:48px;flex-wrap:wrap">
+<div>
+<div class="breadcrumb">
+<a href="edindustrial.html">Home</a><span class="sep">&gt;</span><span>PROBAT Group</span>
+</div>
+<h1>Backed by the <span class="hero-accent">PROBAT Group.</span><br>Built for Food Processing.</h1>
+</div>
+<img src="./assets/probat-logo.png" alt="PROBAT Group" style="height:180px;width:auto;border-radius:50%;flex-shrink:0">
+</div>
+</div>
+</section>
+
+<section class="probat-content">
+<div class="probat-layout">
+
+<div class="probat-section">
+<p>ED Industrial is part of the PROBAT Group, one of the world's leading manufacturers of food processing machinery. PROBAT builds the machines that process coffee, cocoa, nuts, popcorn, and a wide range of other food products. Their equipment runs in food processing facilities across North America and around the world.</p>
+<p>That connection puts ED Industrial in a different position than a standard mechanical contractor. We work alongside state of the art food processing machinery every day. That exposure raises the bar for how our crews approach food processing facilities, the standards we hold ourselves to, and the knowledge we bring to every scope in this sector. We are only getting sharper.</p>
+</div>
+
+<div class="probat-section">
+<h2>What It Means for Your Facility</h2>
+<p>We support food processing operations of all kinds, from incoming raw material handling through roasting, grinding, coating, packaging, and everything in between. Sanitary piping, process piping, equipment installs, line modifications, conveyor systems, structural platforms and guarding, planned maintenance, and shutdown support are the scopes we run most in this sector.</p>
+</div>
+
+<div class="probat-section">
+<h2>The Machinery PROBAT Covers</h2>
+<p>Coffee roasters and processing lines, cocoa processing equipment, nut roasters and handling systems, popcorn and snack food processing, bulk material handling, grinding and milling systems, and custom food processing machinery across a wide range of applications.</p>
+</div>
+
+<div class="probat-section">
+<h2>What We Do in Food Processing Facilities</h2>
+<p>Sanitary and process piping to food-grade standards, equipment installs and commissioning, line modifications and upgrades, planned maintenance programs, shutdown support, conveyor systems and bulk handling, structural platforms and mezzanines, guarding, on-site welding, rigging and machinery moves, and full project coordination when a scope involves multiple trades.</p>
+
+<div class="probat-certs">
+<span class="probat-cert">TSSA Certified Pressure Welding</span>
+<span class="probat-cert">ASME B31.1 and B31.3</span>
+<span class="probat-cert">CWB Certified Welding</span>
+<span class="probat-cert">433A Red Seal Millwrights</span>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="service-cta">
+<div class="container">
+<h2>Planning a Line, a Shutdown, or Ongoing Support?</h2>
+<p>If you are planning a new line, a shutdown, or need ongoing mechanical support for a food processing operation, contact ED Industrial directly. Our project managers will review the scope and build a plan around your facility and your schedule.</p>
+<div class="cta-buttons">
+<a href="edindustrial.html#contact" class="btn btn-primary">Request a quote</a>
+<a href="tel:5198561214" class="btn btn-outline">Call (519) 856-1214</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+<div class="footer-grid">
+<div class="footer-brand">
+<img src="./assets/logo-ed-industrial.png" alt="ED Industrial" style="filter:brightness(0) invert(1);max-height:80px">
+<p>ED Industrial is a Milton-based industrial mechanical contractor. Millwrighting, fabrication, piping, and installation for manufacturing plants across the GTA and Southern Ontario. Part of the PROBAT Group.</p>
+</div>
+<div class="footer-col">
+<h4>Links</h4>
+<a href="edindustrial.html">Home</a>
+<a href="edindustrial.html#about">About</a>
+<a href="edindustrial.html#services">Services</a>
+<a href="edindustrial.html#industries">Industries</a>
+<a href="edindustrial.html#areas">Areas</a>
+<a href="probat.html">PROBAT Group</a>
+<a href="media.html">Media</a>
+<a href="edindustrial.html#contact">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<a href="./services/millwrighting.html">Millwrighting</a>
+<a href="./services/fabrication.html">Fabrication &amp; Welding</a>
+<a href="./services/piping.html">Pipe Fitting</a>
+<a href="./services/engineering.html">Engineering &amp; Project Management</a>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<a href="tel:5198561214">(519) 856-1214</a>
+<a href="mailto:salescontact@edindustrial.ca">salescontact@edindustrial.ca</a>
+<span>2697 Durante Way, Milton, ON L9T 5H5</span>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 ED Industrial. All rights reserved.</p>
+<p>Part of the PROBAT Group</p>
+</div>
+</footer>
+</body>
+</html>

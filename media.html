@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media | ED Industrial | Milton, ON</title>
+<meta name="description" content="Follow ED Industrial on LinkedIn and browse our project photo gallery. Millwrighting, piping, fabrication, and installation work across the GTA and Southern Ontario.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0f1a2e">
+<link rel="icon" href="./assets/logo-ed-industrial.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700;1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/homepage.css">
+<style>
+/* Media Hero */
+.media-hero {
+  background: #0F1A2E;
+  color: #E8E5DF;
+  padding: 160px 48px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.media-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image:
+    linear-gradient(rgba(59,130,184,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,184,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+.media-hero .container { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; }
+.media-hero h1 {
+  font-family: var(--font-head);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.media-hero .hero-accent { color: var(--accent); }
+.media-hero p {
+  font-size: 17px;
+  color: #9DA3AD;
+  margin-top: 16px;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* LinkedIn Section */
+.linkedin-section {
+  background: var(--bg);
+  padding: 64px 48px;
+}
+.linkedin-section .container { max-width: 1280px; margin: 0 auto; }
+.linkedin-carousel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+.linkedin-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 32px;
+  text-align: center;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.linkedin-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+  border-color: var(--blue);
+}
+.linkedin-icon {
+  width: 140px;
+  height: 140px;
+  background: #0A66C2;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.linkedin-icon svg { width: 88px; height: 88px; fill: #fff; }
+.linkedin-card h3 {
+  font-family: var(--font-head);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+.linkedin-card p {
+  font-size: 14px;
+  color: var(--muted-l);
+  line-height: 1.6;
+}
+.linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #0A66C2;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s;
+  margin-top: auto;
+}
+.linkedin-btn:hover { background: #004182; }
+
+/* Projects Gallery */
+.projects-section {
+  background: var(--surface);
+  padding: 64px 48px;
+}
+.projects-section .container { max-width: 1280px; margin: 0 auto; }
+.projects-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+.gallery-photo {
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  cursor: zoom-in;
+  position: relative;
+}
+.gallery-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+.gallery-photo:hover img { transform: scale(1.05); }
+
+/* Lightbox */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  padding: 40px;
+}
+.lightbox-overlay.active { display: flex; }
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  cursor: default;
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px; right: 28px;
+  background: none; border: none;
+  color: #fff; font-size: 36px; font-weight: 700;
+  cursor: pointer; line-height: 1;
+  opacity: 0.8; transition: opacity 0.2s;
+}
+.lightbox-close:hover { opacity: 1; }
+.lightbox-nav {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  background: none; border: none;
+  color: #fff; font-size: 48px; font-weight: 700;
+  cursor: pointer; opacity: 0.7;
+  transition: opacity 0.2s; padding: 10px;
+}
+.lightbox-nav:hover { opacity: 1; }
+.lightbox-nav.lb-left { left: 16px; }
+.lightbox-nav.lb-right { right: 16px; }
+.lightbox-counter {
+  position: absolute;
+  bottom: 20px; left: 50%; transform: translateX(-50%);
+  color: rgba(255,255,255,0.7);
+  font-size: 14px; font-weight: 600;
+}
+
+/* Media CTA */
+.media-cta {
+  background: #0F1A2E;
+  color: #E8E5DF;
+  text-align: center;
+  padding: 64px 48px;
+}
+.media-cta h2 {
+  font-size: clamp(28px, 3.5vw, 44px);
+  letter-spacing: -0.015em;
+  margin-bottom: 24px;
+}
+.media-cta .cta-buttons {
+  display: flex; gap: 16px;
+  justify-content: center; flex-wrap: wrap;
+}
+
+.footer { margin-top: 0; }
+
+@media (max-width: 1024px) {
+  .media-hero { padding: 140px 32px 52px; }
+  .linkedin-section { padding: 52px 32px; }
+  .projects-section { padding: 52px 32px; }
+  .projects-gallery { grid-template-columns: repeat(3, 1fr); }
+  .media-cta { padding: 52px 32px; }
+}
+@media (max-width: 768px) {
+  .media-hero { padding: 120px 20px 44px; }
+  .linkedin-section { padding: 44px 20px; }
+  .linkedin-carousel { grid-template-columns: 1fr; }
+  .projects-section { padding: 44px 20px; }
+  .projects-gallery { grid-template-columns: repeat(2, 1fr); }
+  .media-cta { padding: 44px 20px; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<nav class="nav">
+<div class="nav-inner">
+<a href="edindustrial.html" class="nav-logo"><img src="./assets/logo-ed-industrial.png" alt="ED Industrial"></a>
+<div class="nav-links">
+<a href="edindustrial.html">Home</a>
+<a href="edindustrial.html#services">Services</a>
+<a href="edindustrial.html#industries">Industries</a>
+<a href="edindustrial.html#areas">Areas</a>
+<a href="probat.html" class="nav-probat">PROBAT</a>
+<a href="media.html" style="color:var(--text);font-weight:700">Media</a>
+<a href="edindustrial.html#contact">Contact</a>
+</div>
+<div class="nav-right">
+<a href="tel:5198561214" class="nav-phone">(519) 856-1214</a>
+<a href="edindustrial.html#contact" class="btn btn-primary nav-cta">Request a quote</a>
+</div>
+</div>
+</nav>
+
+<main id="main-content">
+
+<section class="media-hero">
+<div class="container">
+<h1>Media <span class="hero-accent">&amp; Projects</span></h1>
+<p>Follow us on LinkedIn and browse photos from our work across the GTA and Southern Ontario.</p>
+</div>
+</section>
+
+<section class="linkedin-section">
+<div class="container">
+<div class="eyebrow">Follow Us</div>
+<h2 class="section-heading">Connect on LinkedIn</h2>
+<div style="display:flex;gap:40px;align-items:center;flex-wrap:wrap;margin-top:32px">
+<img src="./assets/photos/brand-wall.jpg" alt="ED Industrial brand wall" style="flex:1;min-width:280px;max-width:740px;border-radius:10px;display:block;width:100%">
+<div style="flex:0 0 300px">
+<a href="https://www.linkedin.com/company/11516301/posts/" target="_blank" rel="noopener" class="linkedin-card">
+<div class="linkedin-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+<h3>ED Industrial</h3>
+<p>Official company page for ED Industrial</p>
+<span class="linkedin-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="#fff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Follow Page</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="projects-section" id="projects">
+<div class="container">
+<div class="eyebrow">Our Work</div>
+<h2 class="section-heading">Project Pictures</h2>
+<div class="projects-gallery" id="projectGallery">
+<div class="gallery-photo"><img src="./assets/photos/silo-install.jpg" alt="Silo installation"></div>
+<div class="gallery-photo"><img src="./assets/photos/processing-equipment.jpg" alt="Processing equipment installation"></div>
+<div class="gallery-photo"><img src="./assets/photos/tank-fabrication.jpg" alt="Tank fabrication"></div>
+<div class="gallery-photo"><img src="./assets/photos/crew-rigging.jpg" alt="Crew rigging equipment"></div>
+<div class="gallery-photo"><img src="./assets/photos/elevator-install.jpg" alt="Bucket elevator installation"></div>
+<div class="gallery-photo"><img src="./assets/photos/conveyor-site.jpg" alt="Conveyor and structural steel"></div>
+<div class="gallery-photo"><img src="./assets/photos/crane-steel-install.jpg" alt="Crane lifting steel"></div>
+<div class="gallery-photo"><img src="./assets/photos/dust-collector.jpg" alt="Dust collector installation"></div>
+<div class="gallery-photo"><img src="./assets/photos/dryer-install.jpg" alt="Dryer installation"></div>
+<div class="gallery-photo"><img src="./assets/photos/discharge-install.jpg" alt="Discharge equipment"></div>
+<div class="gallery-photo"><img src="./assets/photos/rotary-drum.jpg" alt="Rotary drum equipment"></div>
+<div class="gallery-photo"><img src="./assets/photos/crew-leveling.jpg" alt="Crew leveling equipment"></div>
+<div class="gallery-photo"><img src="./assets/photos/steel-site.jpg" alt="Structural steel on site"></div>
+<div class="gallery-photo"><img src="./assets/photos/tight-space-work.jpg" alt="Tight space millwright work"></div>
+<div class="gallery-photo"><img src="./assets/photos/stainless-process-piping.jpg" alt="Stainless process piping"></div>
+<div class="gallery-photo"><img src="./assets/photos/parallel-stainless-pipes.jpg" alt="Parallel stainless pipes"></div>
+<div class="gallery-photo"><img src="./assets/photos/tank-exterior-piping.jpg" alt="Tank exterior piping"></div>
+<div class="gallery-photo"><img src="./assets/photos/rooftop-cyclone-vent.jpg" alt="Rooftop cyclone vent"></div>
+<div class="gallery-photo"><img src="./assets/photos/hot-oil-process-piping.jpg" alt="Hot oil process piping"></div>
+<div class="gallery-photo"><img src="./assets/photos/hot-oil-tank-coils.jpg" alt="Hot oil tank coils"></div>
+<div class="gallery-photo"><img src="./assets/photos/coffee-distribution-bins.jpg" alt="Coffee distribution piping"></div>
+<div class="gallery-photo"><img src="./assets/photos/discharge-pipes.jpg" alt="Discharge pipes"></div>
+<div class="gallery-photo"><img src="./assets/photos/green-coffee-dust-collector.jpg" alt="Green coffee dust collector"></div>
+<div class="gallery-photo"><img src="./assets/photos/hot-air-coffee-piping.jpg" alt="Hot air coffee piping"></div>
+<div class="gallery-photo"><img src="./assets/photos/stainless-elbow-install.jpg" alt="Stainless elbow install"></div>
+<div class="gallery-photo"><img src="./assets/photos/shop-detail.jpg" alt="Shop piping work"></div>
+<div class="gallery-photo"><img src="./assets/photos/welding.jpg" alt="Welding work"></div>
+<div class="gallery-photo"><img src="./assets/photos/fabrication-line.jpg" alt="Fabrication line"></div>
+<div class="gallery-photo"><img src="./assets/photos/screen-install.jpg" alt="Screen installation"></div>
+<div class="gallery-photo"><img src="./assets/photos/roaster-cooler.jpg" alt="Roaster cooler equipment"></div>
+</div>
+</div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox-overlay" id="lightbox">
+<button class="lightbox-close" id="lbClose">&times;</button>
+<button class="lightbox-nav lb-left" id="lbLeft">&#8249;</button>
+<img id="lbImg" src="" alt="">
+<button class="lightbox-nav lb-right" id="lbRight">&#8250;</button>
+<div class="lightbox-counter"><span id="lbCurrent">1</span> / <span id="lbTotal">40</span></div>
+</div>
+
+<script>
+(function(){
+  const photos = Array.from(document.querySelectorAll('.gallery-photo'));
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCurrent = document.getElementById('lbCurrent');
+  const lbTotal = document.getElementById('lbTotal');
+  const total = photos.length;
+  let idx = 0;
+
+  lbTotal.textContent = total;
+
+  function open(i) {
+    idx = i;
+    lbImg.src = photos[i].querySelector('img').src;
+    lbImg.alt = photos[i].querySelector('img').alt;
+    lbCurrent.textContent = i + 1;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  function go(i) {
+    idx = (i + total) % total;
+    lbImg.src = photos[idx].querySelector('img').src;
+    lbImg.alt = photos[idx].querySelector('img').alt;
+    lbCurrent.textContent = idx + 1;
+  }
+
+  photos.forEach((p, i) => p.addEventListener('click', () => open(i)));
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbLeft').addEventListener('click', (e) => { e.stopPropagation(); go(idx - 1); });
+  document.getElementById('lbRight').addEventListener('click', (e) => { e.stopPropagation(); go(idx + 1); });
+  lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', (e) => {
+    if (!lb.classList.contains('active')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') go(idx - 1);
+    if (e.key === 'ArrowRight') go(idx + 1);
+  });
+})();
+</script>
+
+<section class="media-cta">
+<div class="container">
+<h2>Ready to discuss your next project?</h2>
+<div class="cta-buttons">
+<a href="edindustrial.html#contact" class="btn btn-primary">Request a quote</a>
+<a href="tel:5198561214" class="btn btn-outline">Call (519) 856-1214</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+<div class="footer-grid">
+<div class="footer-brand">
+<img src="./assets/logo-ed-industrial.png" alt="ED Industrial" style="filter:brightness(0) invert(1);max-height:80px">
+<p>ED Industrial is a Milton-based industrial mechanical contractor. Millwrighting, fabrication, piping, and installation for manufacturing plants across the GTA and Southern Ontario. Part of the PROBAT Group.</p>
+</div>
+<div class="footer-col">
+<h4>Links</h4>
+<a href="edindustrial.html">Home</a>
+<a href="edindustrial.html#about">About</a>
+<a href="edindustrial.html#services">Services</a>
+<a href="edindustrial.html#industries">Industries</a>
+<a href="edindustrial.html#areas">Areas</a>
+<a href="probat.html">PROBAT Group</a>
+<a href="media.html">Media</a>
+<a href="edindustrial.html#contact">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<a href="./services/millwrighting.html">Millwrighting</a>
+<a href="./services/fabrication.html">Fabrication &amp; Welding</a>
+<a href="./services/piping.html">Pipe Fitting</a>
+<a href="./services/engineering.html">Engineering &amp; Project Management</a>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<a href="tel:5198561214">(519) 856-1214</a>
+<a href="mailto:salescontact@edindustrial.ca">salescontact@edindustrial.ca</a>
+<span>2697 Durante Way, Milton, ON L9T 5H5</span>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 ED Industrial. All rights reserved.</p>
+<p>Part of the PROBAT Group</p>
+</div>
+</footer>
+</body>
+</html>

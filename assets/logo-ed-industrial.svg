@@ -1,0 +1,28 @@
+<svg width="290" height="250" viewBox="0 0 290 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>ED Industrial</title>
+  <!-- Gear group - exact from original, centered -->
+  <g transform="translate(5 8)">
+    <circle cx="120" cy="92" r="78" stroke="#BDC5CF" stroke-width="7"/>
+    <circle cx="120" cy="92" r="55" stroke="#BDC5CF" stroke-width="7"/>
+    <rect x="116.5" y="0" width="7" height="28" rx="2.5" fill="#BDC5CF"/>
+    <rect x="116.5" y="156" width="7" height="28" rx="2.5" fill="#BDC5CF"/>
+    <rect x="28" y="88.5" width="28" height="7" rx="2.5" fill="#BDC5CF"/>
+    <rect x="184" y="88.5" width="28" height="7" rx="2.5" fill="#BDC5CF"/>
+    <rect x="53" y="24" width="17" height="24" rx="2.5" transform="rotate(-45 53 24)" fill="#BDC5CF"/>
+    <rect x="170" y="36" width="17" height="24" rx="2.5" transform="rotate(45 170 36)" fill="#BDC5CF"/>
+    <rect x="53" y="136" width="17" height="24" rx="2.5" transform="rotate(45 53 136)" fill="#BDC5CF"/>
+    <rect x="170" y="124" width="17" height="24" rx="2.5" transform="rotate(-45 170 124)" fill="#BDC5CF"/>
+  </g>
+  <!-- E letter -->
+  <path d="M24 67H125V92H60V104H116V127H60V164H129V189H24V67Z" fill="#17192B"/>
+  <!-- D letter -->
+  <path d="M103 40H143C214 40 261 71 261 118C261 165 214 196 143 196H103V170H141C194 170 228 149 228 118C228 88 194 66 141 66H103V40Z" fill="#17192B"/>
+  <!-- Red vertical divider -->
+  <rect x="198" y="57" width="5" height="118" rx="2.5" fill="#C63139"/>
+  <!-- Industrial text -->
+  <text x="205" y="128" fill="#C63139" font-family="Bahnschrift Condensed, Arial Narrow, Arial, sans-serif" font-size="42" font-weight="400" letter-spacing="0.5">Industrial</text>
+  <!-- Divider line -->
+  <line x1="40" y1="218" x2="250" y2="218" stroke="#BDC5CF" stroke-width="1.5"/>
+  <!-- PROBAT GROUP -->
+  <text x="145" y="238" fill="#7A818C" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="3" text-anchor="middle">PROBAT GROUP</text>
+</svg>

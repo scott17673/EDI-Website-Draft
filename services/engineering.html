@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineering &amp; Project Management | ED Industrial | Milton, ON</title>
+<meta name="description" content="One-contact engineering and project management for industrial mechanical work. AutoCAD drafting, stamped drawings, and full-scope execution across the GTA.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0f1a2e">
+<link rel="icon" href="../assets/logo-ed-industrial.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700;1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/homepage.css">
+<style>
+.service-hero {
+  background: #0F1A2E;
+  color: #E8E5DF;
+  padding: 160px 48px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.service-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(59,130,184,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,184,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+.service-hero .container { position: relative; z-index: 2; }
+.service-hero .breadcrumb {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #9DA3AD;
+  margin-bottom: 20px;
+}
+.service-hero .breadcrumb a {
+  color: #9DA3AD;
+  transition: color 0.2s;
+}
+.service-hero .breadcrumb a:hover { color: #E8E5DF; }
+.service-hero .breadcrumb .sep { margin: 0 10px; opacity: 0.5; }
+.service-hero h1 {
+  font-family: var(--font-head);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+.service-hero .hero-accent { color: var(--accent); }
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 32px;
+  transition: gap 0.2s;
+}
+.back-link:hover { gap: 12px; }
+.back-link .arrow { font-size: 18px; }
+
+.service-content {
+  background: var(--bg);
+  padding: 64px 48px;
+}
+.service-layout {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.service-text h2 {
+  font-size: clamp(28px, 3vw, 36px);
+  margin-bottom: 8px;
+  letter-spacing: -0.015em;
+}
+.service-text .eyebrow { margin-bottom: 12px; }
+.service-text .service-intro {
+  font-size: 16px;
+  color: var(--muted-l);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.service-list {
+  list-style: none;
+  margin-bottom: 32px;
+}
+.service-list li {
+  font-size: 15px;
+  color: var(--muted-l);
+  line-height: 1.8;
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 4px;
+}
+.service-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 8px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.service-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.service-photo-slot {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+.service-cert {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(196,43,32,0.08);
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 6px;
+}
+
+.other-services {
+  background: var(--surface);
+  padding: 64px 48px;
+}
+.other-services .container { max-width: 1280px; margin: 0 auto; }
+.other-services h2 {
+  font-size: clamp(28px, 3vw, 36px);
+  margin-bottom: 8px;
+  letter-spacing: -0.015em;
+}
+.other-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+.other-card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s, border-color 0.2s;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+.other-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+  border-color: var(--accent);
+}
+.other-card h3 { font-size: 20px; margin-bottom: 10px; font-weight: 700; }
+.other-card p { font-size: 14px; color: var(--muted-l); line-height: 1.7; margin-bottom: 16px; }
+.other-card .card-arrow {
+  font-size: 20px;
+  color: var(--accent);
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.other-card:hover .card-arrow { opacity: 1; }
+
+.service-cta {
+  background: #0F1A2E;
+  color: #E8E5DF;
+  text-align: center;
+  padding: 64px 48px;
+}
+.service-cta h2 {
+  font-size: clamp(28px, 3.5vw, 44px);
+  letter-spacing: -0.015em;
+  margin-bottom: 24px;
+}
+.service-cta .cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer { margin-top: 0; }
+
+@media (max-width: 1024px) {
+  .service-hero { padding: 140px 32px 52px; }
+  .service-content { padding: 52px 32px; }
+  .service-layout { gap: 40px; }
+  .other-services { padding: 52px 32px; }
+  .service-cta { padding: 52px 32px; }
+}
+@media (max-width: 768px) {
+  .service-hero { padding: 120px 20px 44px; }
+  .service-content { padding: 44px 20px; }
+  .service-layout { grid-template-columns: 1fr; gap: 32px; }
+  .other-services { padding: 44px 20px; }
+  .other-grid { grid-template-columns: 1fr; }
+  .service-cta { padding: 44px 20px; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<nav class="nav">
+<div class="nav-inner">
+<a href="../edindustrial.html" class="nav-logo"><img src="../assets/logo-ed-industrial.png" alt="ED Industrial"></a>
+<div class="nav-links">
+<a href="../edindustrial.html">Home</a>
+<a href="../edindustrial.html#services">Services</a>
+<a href="../edindustrial.html#industries">Industries</a>
+<a href="../edindustrial.html#areas">Areas</a>
+<a href="../probat.html" class="nav-probat">PROBAT</a>
+<a href="../media.html">Media</a>
+<a href="../edindustrial.html#contact">Contact</a>
+</div>
+<div class="nav-right">
+<a href="tel:5198561214" class="nav-phone">(519) 856-1214</a>
+<a href="../edindustrial.html#contact" class="btn btn-primary nav-cta">Request a quote</a>
+</div>
+</div>
+</nav>
+
+<main id="main-content">
+
+<section class="service-hero">
+<div class="container">
+<div class="breadcrumb">
+<a href="../edindustrial.html">Home</a><span class="sep">&gt;</span><a href="../edindustrial.html#services">Services</a><span class="sep">&gt;</span><span>Engineering &amp; Project Management</span>
+</div>
+<h1>Engineering &amp; <span class="hero-accent">Project Management</span></h1>
+</div>
+</section>
+
+<section class="service-content">
+<div class="service-layout">
+<div class="service-text">
+<a href="../edindustrial.html#services" class="back-link"><span class="arrow">&larr;</span> Back to all services</a>
+<div class="eyebrow">Engineering &amp; Project Management</div>
+<h2>One-Contact Industrial Project Execution</h2>
+<p class="service-intro">From scope development through completion, ED Industrial manages the full project lifecycle across all mechanical disciplines. AutoCAD drafting, stamped engineering drawings, mechanical and structural design, plant layout, scheduling, field coordination, and multi-trade project management - all under one roof in Milton. When a project needs outside trades alongside the mechanical scope, we coordinate them. Electrical, concrete, controls, gas, structural, HVAC. You deal with one contact and one accountable team from the first conversation to the final walkthrough.</p>
+<ul class="service-list">
+<li>One-contact approach from scope development to completion</li>
+<li>AutoCAD drafting and stamped engineering drawings</li>
+<li>Mechanical and structural design, plant layout, and process design</li>
+<li>Full project execution across all mechanical disciplines</li>
+<li>Scope development, scheduling, and field coordination</li>
+<li>Shutdown turnaround planning and outage coordination</li>
+<li>Multi-trade industrial project management</li>
+</ul>
+<div class="service-cert">PMP Certified Project Management - Engineer Stamped Designs</div>
+</div>
+<div class="service-photos">
+<img src="../assets/photos/engineering-drawings-table.jpg" alt="ED Industrial engineering drawings and blueprints" style="width:100%;border-radius:10px;object-fit:cover;aspect-ratio:16/10;cursor:zoom-in" onclick="openLightbox(this.src,this.alt)">
+<img src="../assets/photos/solidworks-model-screen.jpg" alt="SolidWorks 3D model design on screen" style="width:100%;border-radius:10px;object-fit:cover;aspect-ratio:16/10;cursor:zoom-in" onclick="openLightbox(this.src,this.alt)">
+<img src="../assets/photos/engineer-at-workstation.jpg" alt="ED Industrial engineer reviewing AutoCAD drawings" style="width:100%;border-radius:10px;object-fit:cover;aspect-ratio:16/10;cursor:zoom-in" onclick="openLightbox(this.src,this.alt)">
+</div>
+</div>
+</section>
+
+<section class="other-services">
+<div class="container">
+<div class="eyebrow">Other Services</div>
+<h2>More From ED Industrial</h2>
+<div class="other-grid">
+<a href="millwrighting.html" class="other-card">
+<h3>Millwrighting</h3>
+<p>Equipment installs, maintenance, and modifications. Rigging, demolition, conveyors, and planned maintenance programs. 433A Red Seal certified.</p>
+<span class="card-arrow">&rarr;</span>
+</a>
+<a href="fabrication.html" class="other-card">
+<h3>Fabrication &amp; Welding</h3>
+<p>Pre-fabrication and on-site welding from our 20,000 sq ft shop. Mezzanines, platforms, custom guarding. CWB certified.</p>
+<span class="card-arrow">&rarr;</span>
+</a>
+<a href="piping.html" class="other-card">
+<h3>Pipe Fitting</h3>
+<p>Process and stainless piping solutions. Tie-ins, modifications, upgrades, and full new-scope installs. TSSA certified.</p>
+<span class="card-arrow">&rarr;</span>
+</a>
+</div>
+</div>
+</section>
+
+<section class="service-cta">
+<div class="container">
+<h2>Ready to discuss your engineering project?</h2>
+<div class="cta-buttons">
+<a href="../edindustrial.html#contact" class="btn btn-primary">Request a quote</a>
+<a href="tel:5198561214" class="btn btn-outline">Call (519) 856-1214</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<!-- Lightbox -->
+<div id="lb-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out" onclick="closeLightbox(event)">
+<button onclick="closeLightbox()" style="position:fixed;top:20px;right:28px;background:none;border:none;color:#fff;font-size:36px;cursor:pointer;line-height:1;z-index:10001">&times;</button>
+<img id="lb-img" src="" alt="" style="max-width:90vw;max-height:88vh;border-radius:8px;box-shadow:0 8px 48px rgba(0,0,0,0.6);cursor:default;display:block" onclick="event.stopPropagation()">
+</div>
+<script>
+var lbImgs = [];
+document.querySelectorAll('.service-photos img').forEach(function(img,i){lbImgs.push({src:img.src,alt:img.alt});img.dataset.idx=i;img.onclick=function(){openIdx(i);};});
+function openIdx(i){var o=document.getElementById('lb-overlay');document.getElementById('lb-img').src=lbImgs[i].src;document.getElementById('lb-img').alt=lbImgs[i].alt;o.style.display='flex';document.body.style.overflow='hidden';}
+function openLightbox(src,alt){var i=lbImgs.findIndex(function(x){return x.src.includes(src.split('/').pop());});if(i>=0)openIdx(i);}
+function closeLightbox(e){if(e&&e.target===document.getElementById('lb-img'))return;document.getElementById('lb-overlay').style.display='none';document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(document.getElementById('lb-overlay').style.display==='flex'){if(e.key==='Escape')closeLightbox();var cur=lbImgs.findIndex(function(x){return x.src===document.getElementById('lb-img').src;});if(e.key==='ArrowRight'&&cur<lbImgs.length-1)openIdx(cur+1);if(e.key==='ArrowLeft'&&cur>0)openIdx(cur-1);}});
+</script>
+
+<footer class="footer">
+<div class="footer-grid">
+<div class="footer-brand">
+<img src="../assets/logo-ed-industrial.png" alt="ED Industrial" style="filter:brightness(0) invert(1);max-height:80px">
+<p>ED Industrial is a Milton-based industrial mechanical contractor. Millwrighting, fabrication, piping, and installation for manufacturing plants across the GTA and Southern Ontario. Part of the PROBAT Group.</p>
+</div>
+<div class="footer-col">
+<h4>Links</h4>
+<a href="../edindustrial.html">Home</a>
+<a href="../edindustrial.html#about">About</a>
+<a href="../edindustrial.html#services">Services</a>
+<a href="../edindustrial.html#industries">Industries</a>
+<a href="../edindustrial.html#areas">Areas</a>
+<a href="../probat.html">PROBAT Group</a>
+<a href="../media.html">Media</a>
+<a href="../edindustrial.html#contact">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<a href="millwrighting.html">Millwrighting</a>
+<a href="fabrication.html">Fabrication &amp; Welding</a>
+<a href="piping.html">Pipe Fitting</a>
+<a href="engineering.html">Engineering &amp; Project Management</a>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<a href="tel:5198561214">(519) 856-1214</a>
+<a href="mailto:salescontact@edindustrial.ca">salescontact@edindustrial.ca</a>
+<span>2697 Durante Way, Milton, ON L9T 5H5</span>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 ED Industrial. All rights reserved.</p>
+<p>Part of the PROBAT Group</p>
+</div>
+</footer>
+</body>
+</html>

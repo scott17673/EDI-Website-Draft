@@ -1,0 +1,21 @@
+<svg width="860" height="204" viewBox="0 18 860 186" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>E D Industrial</title>
+  <desc>Light E D Industrial wordmark for dark backgrounds.</desc>
+  <g transform="translate(92 8)">
+    <circle cx="120" cy="92" r="78" stroke="#F3F6FA" stroke-width="7"/>
+    <circle cx="120" cy="92" r="55" stroke="#F3F6FA" stroke-width="7"/>
+    <rect x="116.5" y="0" width="7" height="28" rx="2.5" fill="#F3F6FA"/>
+    <rect x="116.5" y="156" width="7" height="28" rx="2.5" fill="#F3F6FA"/>
+    <rect x="28" y="88.5" width="28" height="7" rx="2.5" fill="#F3F6FA"/>
+    <rect x="184" y="88.5" width="28" height="7" rx="2.5" fill="#F3F6FA"/>
+    <rect x="53" y="24" width="17" height="24" rx="2.5" transform="rotate(-45 53 24)" fill="#F3F6FA"/>
+    <rect x="170" y="36" width="17" height="24" rx="2.5" transform="rotate(45 170 36)" fill="#F3F6FA"/>
+    <rect x="53" y="136" width="17" height="24" rx="2.5" transform="rotate(45 53 136)" fill="#F3F6FA"/>
+    <rect x="170" y="124" width="17" height="24" rx="2.5" transform="rotate(-45 170 124)" fill="#F3F6FA"/>
+  </g>
+  <path d="M24 59H125V84H60V96H116V119H60V156H129V181H24V59Z" fill="#F3F6FA"/>
+  <path d="M103 32H143C214 32 261 63 261 110C261 157 214 188 143 188H103V162H141C194 162 228 141 228 110C228 80 194 58 141 58H103V32Z" fill="#F3F6FA"/>
+  <rect x="287" y="49" width="5" height="118" rx="2.5" fill="#D2474E"/>
+  <text x="307" y="120" fill="#F3F6FA" font-family="Bahnschrift Condensed, Arial Narrow, Aptos Narrow, Segoe UI, Arial, sans-serif" font-size="78" font-weight="400" letter-spacing="0.2">Industrial</text>
+  <text x="307" y="164" fill="#C4CEDB" font-family="Segoe UI, Aptos, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="2.4">PROBAT GROUP</text>
+</svg>
