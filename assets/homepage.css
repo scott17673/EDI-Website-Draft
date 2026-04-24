@@ -139,7 +139,7 @@ background-size:48px 48px;z-index:2;pointer-events:none}
 
 /* WHY EDI */
 .why-edi{background:var(--surface);padding:0;overflow:hidden}
-.why-edi-layout{display:grid;grid-template-columns:1fr 48%;align-items:stretch;min-height:660px}
+.why-edi-layout{display:grid;grid-template-columns:1fr 35%;align-items:stretch;min-height:660px}
 .why-edi-left{padding:64px 48px 64px max(48px,calc((100vw - 1280px)/2 + 48px));min-width:0}
 .why-edi-photo{overflow:hidden}
 .why-edi-photo img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;border-radius:0}
