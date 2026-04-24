@@ -82,7 +82,7 @@ background-size:48px 48px;z-index:2;pointer-events:none}
 
 /* WHO WE ARE */
 .who-we-are{background:var(--bg)}
-.who-layout{display:flex;gap:48px;align-items:center}
+.who-layout{display:flex;gap:96px;align-items:center}
 .who-copy{flex:1}
 .who-image{flex:2.2;border-radius:10px;overflow:hidden}
 .who-image img{width:100%;display:block;border-radius:10px;object-fit:contain}
