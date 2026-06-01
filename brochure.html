@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ED Industrial Brochure</title>
+<link rel="icon" href="./assets/logo-ed-industrial.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #FFFFFF;
+    --surface: #F4F6F9;
+    --text: #1A1A2E;
+    --muted: #6B7280;
+    --muted-l: #4B5563;
+    --accent: #C42B20;
+    --accent-h: #D83227;
+    --blue: #3B82B8;
+    --blue-light: #E8F0F8;
+    --navy: #0F1A2E;
+    --cream: #E8E5DF;
+    --gray: #9DA3AD;
+    --font-head: 'Barlow Condensed', sans-serif;
+    --font-body: 'Barlow', sans-serif;
+  }
+
+  html, body {
+    background: #2a2a2a;
+    font-family: var(--font-body);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body { padding: 24px 0; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+
+  .page {
+    width: 8.5in;
+    height: 11in;
+    background: var(--bg);
+    color: var(--text);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    page-break-after: always;
+    break-after: page;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    display: flex;
+    flex-direction: column;
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+
+  h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; line-height: 1.05; letter-spacing: -0.015em; }
+  p { line-height: 1.6; }
+
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+  }
+
+  /* Re-usable navy grid overlay */
+  .grid-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(59,130,184,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59,130,184,0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  /* ============== PAGE 1 - COVER ============== */
+  .cover {
+    background: var(--navy);
+    color: var(--cream);
+  }
+  /* Logo + eyebrow overlay sitting on the welder photo */
+  .cover-overlay-top {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    padding: 0.36in 0.6in;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    z-index: 5;
+  }
+  .cover-logo-pill {
+    background: transparent;
+    box-shadow: none;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .cover-logo-pill img {
+    height: 152px;
+    width: auto;
+    display: block;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.75));
+  }
+  .logo-probat {
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    text-align: center;
+    padding-left: 0.32em;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.75);
+  }
+  .cover-overlay-top .eyebrow {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.9), 0 0 22px rgba(0,0,0,0.7);
+  }
+
+  .cover-photo-band {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    min-height: 5.4in;
+    overflow: hidden;
+    background: var(--navy);
+  }
+  .cover-photo-band > .welding-loop {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    display: block;
+    z-index: 0;
+  }
+  /* Subtle red glow - smaller, focused on the arc */
+  .cover-photo-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 17% 14% at 60% 55%, rgba(220,80,45,0.35) 0%, rgba(120,30,30,0.12) 45%, transparent 85%);
+    pointer-events: none;
+    z-index: 2;
+    mix-blend-mode: screen;
+  }
+  /* Smooth bottom fade into navy - darker faster near the title */
+  .cover-photo-band::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 45%;
+    background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(15,26,46,0.25) 30%,
+      rgba(15,26,46,0.7) 65%,
+      var(--navy) 85%);
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  .cover-text {
+    padding: 0.2in 0.6in 0.3in;
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .cover-text::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(59,130,184,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59,130,184,0.07) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 38%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 38%);
+  }
+  .cover-text-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 6.5in;
+  }
+  .cover-text h1 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.04;
+    color: var(--cream);
+    margin-bottom: 12px;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.4);
+  }
+  .cover-text h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .cover-text .cover-sub {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.65;
+    max-width: 6in;
+  }
+
+  /* Stats strip - shared between cover and elsewhere */
+  .stat-strip {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 0.3in 0.6in;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    position: relative;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat-strip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(59,130,184,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59,130,184,0.07) 1px, transparent 1px);
+    background-size: 36px 36px;
+    pointer-events: none;
+  }
+  .stat {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .stat-num {
+    font-family: var(--font-head);
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 1;
+    color: var(--cream);
+    letter-spacing: -0.02em;
+  }
+  .stat-label {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--gray);
+    line-height: 1.35;
+    letter-spacing: 0.02em;
+  }
+  .stat.partner {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+  .stat.partner img {
+    height: 68px;
+    width: 68px;
+    border-radius: 8px;
+    object-fit: contain;
+    padding: 6px;
+    background: #fff;
+  }
+  .stat.partner .stat-num {
+    font-size: 22px;
+    letter-spacing: 0.01em;
+  }
+
+  /* ============== SHARED HEADER BAND ============== */
+  .header-band {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 0.36in 0.6in;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .header-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(59,130,184,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59,130,184,0.07) 1px, transparent 1px);
+    background-size: 36px 36px;
+    pointer-events: none;
+  }
+  .header-band-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .header-band .eyebrow { color: var(--accent); margin-bottom: 6px; }
+  .header-band h2 {
+    font-size: 38px;
+    color: var(--cream);
+  }
+  .header-band-logo {
+    height: 84px;
+    width: 84px;
+    border-radius: 10px;
+    object-fit: contain;
+    padding: 7px;
+    flex-shrink: 0;
+    background: #fff;
+  }
+
+  /* ============== PAGE 2 - WHO WE ARE ============== */
+  .body-page {
+    background: var(--bg);
+  }
+  .who-copy-section {
+    padding: 0.3in 0.6in 0.16in;
+  }
+  .who-copy-section .lead {
+    font-size: 19px;
+    color: var(--text);
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .who-copy-section p {
+    font-size: 15px;
+    color: var(--muted-l);
+    line-height: 1.7;
+    margin-bottom: 11px;
+  }
+  .building-band {
+    width: 100%;
+    flex: 1;
+    min-height: 2.2in;
+    overflow: hidden;
+    position: relative;
+  }
+  .building-band img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 55%;
+    display: block;
+  }
+  .building-band-caption {
+    position: absolute;
+    bottom: 18px;
+    left: 24px;
+    font-family: var(--font-head);
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    letter-spacing: 0.01em;
+  }
+  .building-band-caption span {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* Why EDI cards */
+  .why-band {
+    padding: 0.2in 0.6in 0.22in;
+    background: var(--surface);
+    flex-shrink: 0;
+  }
+  .why-band .eyebrow { margin-bottom: 10px; }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 11px;
+  }
+  .why-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 10px 12px;
+  }
+  .why-card h4 {
+    font-size: 16px;
+    color: var(--text);
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .why-card p {
+    font-size: 11.5px;
+    color: var(--muted-l);
+    line-height: 1.5;
+  }
+
+  /* Industries We Serve strip */
+  .industries-band {
+    padding: 0.16in 0.45in 0.12in;
+    background: var(--bg);
+    flex-shrink: 0;
+  }
+  .industries-band .eyebrow { margin-bottom: 9px; }
+  .industries-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+    max-width: 7.1in;
+    margin: 0 auto;
+  }
+  .industries-line span {
+    font-family: var(--font-body);
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+  }
+  .industries-line span:not(:last-child)::after {
+    content: '\2022';
+    color: var(--accent);
+    font-weight: 700;
+    margin: 0 9px;
+  }
+
+  /* Certified & Affiliated credentials strip (navy) */
+  .creds-band {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 0.14in 0.32in 0.16in;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .creds-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(59,130,184,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59,130,184,0.07) 1px, transparent 1px);
+    background-size: 36px 36px;
+    pointer-events: none;
+  }
+  .creds-band .eyebrow { position: relative; z-index: 1; color: var(--accent); margin-bottom: 8px; padding-left: 0.28in; }
+  .creds-logos {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    border-radius: 8px;
+    padding: 9px 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .creds-logos img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+  .creds-row {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .cred-badge {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.22);
+    color: var(--cream);
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 7px 13px;
+    border-radius: 4px;
+  }
+
+  /* ============== PAGE 3 - WHAT WE DO ============== */
+  .services-page { padding: 0.55in 0.6in 0.45in; }
+  .services-page .eyebrow { margin-bottom: 8px; }
+  .services-page h2 {
+    font-size: 44px;
+    margin-bottom: 24px;
+    color: var(--text);
+  }
+  .svc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 16px;
+    flex: 1;
+    min-height: 0;
+  }
+  .svc-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 12px rgba(15,26,46,0.08);
+    position: relative;
+    min-height: 0;
+  }
+  .svc-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 3px;
+    width: 100%;
+    background: var(--accent);
+  }
+  .svc-photo {
+    width: 100%;
+    height: 52%;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+  }
+  .svc-body {
+    padding: 12px 16px 14px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .svc-body h3 {
+    font-size: 20px;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .svc-body p {
+    font-size: 11.5px;
+    color: var(--muted-l);
+    line-height: 1.5;
+  }
+
+  /* ============== SERVICE DETAIL PAGES ============== */
+  .svc-page { background: var(--bg); }
+  .svc-hero {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 0.5in 0.6in 0.42in;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .svc-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(59,130,184,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59,130,184,0.07) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+  .svc-hero .eyebrow { position: relative; z-index: 1; color: var(--accent); margin-bottom: 8px; }
+  .svc-hero h1 {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-head);
+    font-size: 46px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.04;
+    color: var(--cream);
+  }
+  .svc-hero h1 .accent { color: var(--accent); }
+
+  .svc-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0.4in 0.6in 0.3in;
+    gap: 0.28in;
+    min-height: 0;
+  }
+  .svc-cols {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 0.42in;
+    align-items: start;
+  }
+  .svc-text h2 {
+    font-size: 26px;
+    color: var(--text);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .svc-intro {
+    font-size: 13px;
+    color: var(--muted-l);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .svc-bullets {
+    list-style: none;
+    margin-bottom: 18px;
+  }
+  .svc-bullets li {
+    font-size: 12.5px;
+    color: var(--muted-l);
+    line-height: 1.5;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 7px;
+  }
+  .svc-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 9px;
+    width: 10px; height: 2px;
+    background: var(--accent);
+  }
+  .svc-cert {
+    display: inline-block;
+    background: rgba(196,43,32,0.10);
+    color: var(--accent);
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 9px 16px;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+  }
+  /* Right column photo stack */
+  .svc-photos-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .svc-photos-side img {
+    width: 100%;
+    height: 1.85in;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(15,26,46,0.12);
+  }
+  .svc-photos-side img.tall {
+    grid-column: span 2;
+    height: 2.1in;
+  }
+  /* Bottom full-width photo strip - grows to fill leftover vertical space */
+  .svc-photostrip {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: 10px;
+    flex: 1;
+    min-height: 0;
+  }
+  .svc-photostrip img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(15,26,46,0.12);
+  }
+  /* Two-photo strip with a wider first photo (used on Engineering page) */
+  .svc-photostrip.strip-2wide {
+    grid-auto-flow: row;
+    grid-template-columns: 1.7fr 1fr;
+  }
+  /* Engineering page: single-column side stack -
+     engineer photo (tall), wide-but-short blueprint, shop photo under it */
+  .svc-page.eng .svc-photos-side { grid-template-columns: 1fr; }
+  .svc-page.eng .svc-photos-side img { height: 1.55in; }
+  .svc-page.eng .svc-photos-side img.tall { height: 2.15in; grid-column: 1 / 2; }
+  /* Office photo gets the whole bottom as a full-width banner -
+     wide enough that the entire room shows with no side crop */
+  .svc-page.eng .svc-photostrip.strip-2wide {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .svc-page.eng .svc-photostrip img.show-full {
+    object-fit: cover;
+    object-position: center 60%;
+  }
+  /* Four-photo side stack (engineer, blueprint, shop, computer) */
+  .svc-page.eng .svc-photos-side img { height: 1.3in; }
+  .svc-page.eng .svc-photos-side img.tall { height: 1.7in; grid-column: 1 / 2; }
+  /* Fabrication page: wide landscape photos shown 2x2 so their
+     horizontal orientation reads properly instead of cropping to square */
+  .svc-page.fab .svc-photostrip {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  /* Pipe Fitting page: taller top photo */
+  .svc-page.pipe .svc-photos-side img.tall { height: 2.95in; }
+  /* Millwrighting page: all three side photos taller */
+  .svc-page.mill .svc-photos-side img { height: 2.15in; }
+  .svc-page.mill .svc-photos-side img.tall { height: 3.25in; }
+
+  /* ============== PAGE 4 - PROBAT + CONTACT ============== */
+  .probat-body {
+    padding: 0.22in 0.6in 0.18in;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .probat-body p {
+    font-size: 12.5px;
+    color: var(--muted-l);
+    line-height: 1.6;
+  }
+  /* Photos sized to their own aspect and centered, so each shows in full
+     (zoomed out) with no cropping and no empty letterbox bars */
+  .probat-photos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+  }
+  .probat-photos img {
+    height: 1.48in;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(15,26,46,0.12);
+  }
+  .probat-photos img.land { width: 2.22in; }       /* 1.5:1 landscape - shows whole */
+  .probat-photos img.land2 { width: 1.97in; }      /* 1.33:1 landscape - shows whole */
+  .probat-photos img.portrait { width: 1.11in; }   /* 0.75:1 portrait - shows whole */
+  .probat-certs {
+    background: var(--navy);
+    padding: 0.26in 0.6in;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    position: relative;
+  }
+  .probat-certs::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(59,130,184,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59,130,184,0.07) 1px, transparent 1px);
+    background-size: 36px 36px;
+    pointer-events: none;
+  }
+  .cert {
+    position: relative;
+    background: rgba(196,43,32,0.20);
+    border: 1px solid rgba(196,43,32,0.50);
+    color: #f4a8a0;
+    font-family: var(--font-body);
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 9px 16px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .contact-section {
+    padding: 0.22in 0.6in 0.24in;
+    background: var(--bg);
+  }
+  .contact-heading {
+    margin-bottom: 10px;
+  }
+  .contact-heading .eyebrow { margin-bottom: 4px; }
+  .contact-heading h2 {
+    font-size: 30px;
+    color: var(--text);
+  }
+  .contact-cols {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 28px;
+  }
+  .contact-col h3 {
+    font-size: 16px;
+    color: var(--text);
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+    font-family: var(--font-body);
+  }
+  .contact-col h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 2px;
+    width: 28px;
+    background: var(--accent);
+  }
+  .contact-col p {
+    font-size: 13px;
+    color: var(--muted-l);
+    line-height: 1.65;
+    margin-bottom: 6px;
+  }
+  .contact-col strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+  .areas-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+  .areas-list span {
+    font-size: 12.5px;
+    color: var(--muted-l);
+    font-weight: 500;
+    position: relative;
+    padding-right: 12px;
+  }
+  .areas-list span:not(:last-child)::after {
+    content: '.';
+    position: absolute;
+    right: 3px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .cta-band {
+    background: var(--accent);
+    color: #fff;
+    padding: 0.22in 0.6in 0.26in;
+    text-align: center;
+  }
+  .cta-band h2 {
+    font-size: 26px;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .cta-band p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.92);
+    margin-bottom: 4px;
+  }
+  .cta-band .cta-phone {
+    font-family: var(--font-head);
+    font-size: 26px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.01em;
+    margin-top: 4px;
+    display: block;
+  }
+  .cta-band .cta-email {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.02em;
+    margin-top: 2px;
+    display: block;
+  }
+  .footer-strip {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 0.18in 0.6in;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .footer-strip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(59,130,184,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59,130,184,0.07) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+  .footer-logo, .footer-strip span { position: relative; z-index: 1; }
+  .footer-logo {
+    background: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .footer-logo img {
+    height: 38px;
+    display: block;
+  }
+  .footer-strip span {
+    font-size: 11.5px;
+    color: var(--gray);
+    letter-spacing: 0.04em;
+  }
+
+  /* ============== PRINT ============== */
+  @page {
+    size: letter;
+    margin: 0;
+  }
+  @media print {
+    html, body { background: #fff; padding: 0; margin: 0; }
+    body { gap: 0; }
+    .page {
+      box-shadow: none;
+      margin: 0;
+      width: 8.5in;
+      height: 11in;
+    }
+    .no-print { display: none !important; }
+
+    /* Glow: drop mix-blend-mode (PDF strips it) and stack three simple 2-stop
+       radials. Each individual gradient only has 2 colors, so PDF can't band
+       them - the layered combination creates a soft glow without visible rings. */
+    .cover-photo-band::before {
+      background:
+        radial-gradient(ellipse 9% 7% at 60% 55%, rgba(255,200,130,0.7), transparent 100%),
+        radial-gradient(ellipse 15% 12% at 60% 55%, rgba(255,130,70,0.45), transparent 100%),
+        radial-gradient(ellipse 22% 18% at 60% 55%, rgba(220,70,40,0.30), transparent 100%) !important;
+      mix-blend-mode: normal !important;
+    }
+
+    /* Bottom fade: shorter + fewer stops so PDF banding isn't noticeable */
+    .cover-photo-band::after {
+      height: 28% !important;
+      background: linear-gradient(to bottom,
+        transparent 0%,
+        rgba(15,26,46,0.85) 70%,
+        var(--navy) 100%) !important;
+    }
+
+  }
+
+  .print-hint {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    background: var(--navy);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    z-index: 1000;
+  }
+  .print-hint button {
+    margin-left: 10px;
+    background: var(--accent);
+    border: none;
+    color: #fff;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .print-hint button:hover { background: var(--accent-h); }
+</style>
+</head>
+<body>
+
+<div class="print-hint no-print">
+  Print this page (Ctrl/Cmd+P) and choose "Save as PDF" - letter size, no margins, background graphics on.
+  <button onclick="window.print()">Print to PDF</button>
+</div>
+
+<!-- ============== PAGE 1 - COVER ============== -->
+<section class="page cover">
+  <div class="cover-photo-band">
+    <video class="welding-loop" autoplay muted loop playsinline aria-label="Welder at work">
+      <source src="./assets/media/welding_fullimage_preserve_quality.mp4" type="video/mp4">
+    </video>
+    <div class="cover-overlay-top">
+      <div class="cover-logo-pill">
+        <img src="./assets/logo-ed-emblem.png" alt="ED Industrial">
+        <span class="logo-probat">PROBAT GROUP</span>
+      </div>
+      <div class="eyebrow">MILTON, ONTARIO . SINCE 2004</div>
+    </div>
+  </div>
+  <div class="cover-text">
+    <div class="cover-text-inner">
+      <h1>Industrial Millwright, Piping &amp; Mechanical <em>Contractor.</em></h1>
+      <p class="cover-sub">Building, installing, and maintaining equipment for manufacturing plants across the GTA and Southern Ontario.</p>
+    </div>
+  </div>
+  <div class="stat-strip">
+    <div class="stat">
+      <div class="stat-num">20K</div>
+      <div class="stat-label">sq ft fabrication shop<br>in Milton, ON</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">20+</div>
+      <div class="stat-label">years in<br>the field</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">CWB</div>
+      <div class="stat-label">&amp; TSSA<br>certified</div>
+    </div>
+    <div class="stat partner">
+      <img src="./assets/probat-logo.png" alt="PROBAT Group">
+      <div>
+        <div class="stat-num">PROBAT Group</div>
+        <div class="stat-label">Partner Company</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PAGE 2 - WHO WE ARE + WHY EDI ============== -->
+<section class="page body-page">
+  <div class="header-band">
+    <div class="header-band-inner">
+      <div>
+        <div class="eyebrow">Who We Are</div>
+        <h2>ED Industrial</h2>
+      </div>
+    </div>
+  </div>
+  <div class="who-copy-section">
+    <p class="lead">We are a multi-skilled company located in the Greater Toronto Area specializing in millwrighting, fabrication, welding, piping/fitting, and engineering.</p>
+    <p>We provide our customers with professional tradespeople who take pride in the quality of every job they do. Our business relationships are built on a personalized approach that has resulted in many years of repeat service to our clients.</p>
+    <p>All our employees are dedicated tradespeople that include millwrights, CWB and TSSA certified welders, machinists, pipefitters, AUTO-CAD designers, and engineers. Our team members have the skills to work together to troubleshoot and resolve your issues.</p>
+  </div>
+  <div class="building-band">
+    <img src="./assets/photos/building-exterior.png" alt="ED Industrial headquarters in Milton, Ontario">
+    <div class="building-band-caption">
+      ED Industrial Headquarters
+      <span>2697 Durante Way, Milton, ON</span>
+    </div>
+  </div>
+  <div class="why-band">
+    <div class="eyebrow">Why EDI</div>
+    <div class="why-grid">
+      <div class="why-card">
+        <h4>One Team, Full Scope</h4>
+        <p>Millwrights, pipefitters, welders, and engineers under one roof. Core mechanical work stays in house.</p>
+      </div>
+      <div class="why-card">
+        <h4>Shop to Field Continuity</h4>
+        <p>Fabrication and prep happen in Milton before anything reaches your site. Same team shop to field.</p>
+      </div>
+      <div class="why-card">
+        <h4>20+ Years, Same Standards</h4>
+        <p>In operation since 2004 with the same clients returning year after year. Built on repeat work.</p>
+      </div>
+      <div class="why-card">
+        <h4>One Contact, Start to Finish</h4>
+        <p>From first call to final invoice, you work with one person who knows the scope and the crew.</p>
+      </div>
+    </div>
+  </div>
+  <div class="industries-band">
+    <div class="eyebrow">Industries We Serve</div>
+    <div class="industries-line">
+      <span>Food &amp; Beverage</span>
+      <span>Pharmaceuticals</span>
+      <span>Consumer Goods</span>
+      <span>Plastics &amp; Packaging</span>
+      <span>Chemical</span>
+      <span>Concrete</span>
+      <span>Building Products</span>
+      <span>Metal Refineries</span>
+      <span>Mining &amp; Aggregate</span>
+      <span>Asphalt Plants</span>
+      <span>Recycling</span>
+      <span>Automotive</span>
+    </div>
+  </div>
+  <div class="creds-band">
+    <div class="eyebrow">Certified &amp; Affiliated</div>
+    <div class="creds-logos">
+      <img src="./assets/cred-logos.jpg" alt="CWB, IHSA, TSSA, WSIB / CSPAAT, AWS, ISN, Skilled Trades Ontario"
+           onerror="this.parentNode.style.display='none';document.getElementById('credBadges').style.display='flex';">
+    </div>
+    <div class="creds-row" id="credBadges" style="display:none">
+      <span class="cred-badge">CWB Certified Welding</span>
+      <span class="cred-badge">TSSA Pressure Systems</span>
+      <span class="cred-badge">ASME B31.1 &amp; B31.3</span>
+      <span class="cred-badge">CSA W47.1 &amp; W47.2</span>
+      <span class="cred-badge">433A Red Seal Millwrights</span>
+      <span class="cred-badge">WSIB / CSPAAT</span>
+      <span class="cred-badge">IHSA Member</span>
+      <span class="cred-badge">AWS</span>
+      <span class="cred-badge">ISN Qualified</span>
+      <span class="cred-badge">Skilled Trades Ontario</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SERVICE PAGE - MILLWRIGHTING ============== -->
+<section class="page svc-page mill">
+  <div class="svc-hero">
+    <div class="eyebrow">Our Services</div>
+    <h1>Millwrighting</h1>
+  </div>
+  <div class="svc-main">
+    <div class="svc-cols">
+      <div class="svc-text">
+        <h2>Industrial Millwrighting for Manufacturing Facilities</h2>
+        <p class="svc-intro">Full-scope millwrighting for plants across the GTA and Southern Ontario. We handle machine maintenance, equipment installs, and modifications, plus conveyor work, rotating equipment, shutdown turnarounds, and outage support. Our 433A Red Seal certified millwrights work out of our Milton shop with field crews dispatched across the region. Whether it is a single machinery swap, a precision laser alignment, or a full plant turnaround, the crew that shows up knows the scope before they walk through the door.</p>
+        <ul class="svc-bullets">
+          <li>Equipment installs, machine maintenance, rebuilds, and upgrades</li>
+          <li>Heavy rigging, demolition, and complete plant relocations</li>
+          <li>Turn-key installations and machinery moves</li>
+          <li>Conveyor work, rotating equipment, bearing and shaft replacement</li>
+          <li>Machine maintenance programs, shutdown turnarounds, and outage support</li>
+          <li>Laser alignment, precision leveling, and equipment calibration</li>
+          <li>Shift coverage and skilled trade-labour supplement</li>
+          <li>On-site and in-shop capability</li>
+        </ul>
+        <span class="svc-cert">433A Red Seal Certified Millwrights</span>
+      </div>
+      <div class="svc-photos-side">
+        <img class="tall" src="./assets/photos/silo-install.jpg" alt="Silo installation with crane">
+        <img src="./assets/photos/crew-rigging.jpg" alt="Crew rigging heavy equipment">
+        <img src="./assets/photos/processing-equipment.jpg" alt="Processing equipment installation">
+      </div>
+    </div>
+    <div class="svc-photostrip">
+      <img src="./assets/photos/crane-steel-install.jpg" alt="Crane lift of structural steel">
+      <img src="./assets/photos/dryer-install.jpg" alt="Industrial dryer installation">
+      <img src="./assets/photos/rotary-drum.jpg" alt="Rotary drum installation">
+      <img src="./assets/photos/maintenance-team.jpg" alt="Millwright crew working on site">
+    </div>
+  </div>
+</section>
+
+<!-- ============== SERVICE PAGE - FABRICATION & WELDING ============== -->
+<section class="page svc-page fab">
+  <div class="svc-hero">
+    <div class="eyebrow">Our Services</div>
+    <h1>Fabrication &amp; <span class="accent">Welding</span></h1>
+  </div>
+  <div class="svc-main">
+    <div class="svc-cols">
+      <div class="svc-text">
+        <h2>CWB Certified Fabrication From Our Milton Shop</h2>
+        <p class="svc-intro">Structural steel, stainless steel, aluminum, and custom fabrication from our 20,000 sq ft shop in Milton. We design it, build it, load it on a flatbed, and install it in the field. Fit-up and prep work happen in the shop before anything reaches your site, which cuts field time and reduces disruption to your operation. CWB certified welders handle both structural and process applications, in-shop and on-site.</p>
+        <ul class="svc-bullets">
+          <li>Structural steel, stainless steel, and aluminum fabrication</li>
+          <li>Mezzanines, platforms, guarding, hoppers, and chutes</li>
+          <li>New production line components and modified equipment</li>
+          <li>Fit-up, prep work, and field-ready delivery</li>
+          <li>Flatbed delivery and field installation</li>
+          <li>On-site welding for plant scopes and shutdown work</li>
+          <li>GMAW, GTAW, SMAW, and FCAW welding processes</li>
+        </ul>
+        <span class="svc-cert">CWB Certified, Structural &amp; Process Welding</span>
+      </div>
+      <div class="svc-photos-side">
+        <img class="tall" src="./assets/photos/fab-4.jpg" alt="Structural steel fabrication in shop">
+        <img src="./assets/photos/fab-1.jpg" alt="Custom mezzanine platform fabrication">
+        <img src="./assets/photos/fab-2.jpg" alt="Structural steel welding in shop">
+      </div>
+    </div>
+    <div class="svc-photostrip">
+      <img src="./assets/photos/fab-3.jpg" alt="Process piping fabrication and welding">
+      <img src="./assets/photos/fab-5.jpg" alt="Industrial platform and steel assembly">
+      <img src="./assets/photos/fab-6.jpg" alt="Precision fabrication and fit-up">
+      <img src="./assets/photos/fab-8.jpg" alt="Completed custom fabrication project">
+    </div>
+  </div>
+</section>
+
+<!-- ============== SERVICE PAGE - PIPE FITTING ============== -->
+<section class="page svc-page pipe">
+  <div class="svc-hero">
+    <div class="eyebrow">Our Services</div>
+    <h1>Pipe <span class="accent">Fitting</span></h1>
+  </div>
+  <div class="svc-main">
+    <div class="svc-cols">
+      <div class="svc-text">
+        <h2>Process &amp; Industrial Piping for Manufacturing Facilities</h2>
+        <p class="svc-intro">Process, stainless, sanitary, and pressure piping, pneumatic systems, steam, compressed air, and utility lines for industrial facilities across the GTA and Southern Ontario. From tie-ins, modifications, and reroutes to full new-scope installs, our TSSA certified team handles in-shop prefabrication and field installation to ASME B31.1 and B31.3 standards. If it carries product, pressure, or process fluid through your facility, we can design it, build it, and put it in.</p>
+        <ul class="svc-bullets">
+          <li>Process, stainless, sanitary, pressure, pneumatic, steam, compressed air, and utility lines</li>
+          <li>Food &amp; beverage, chemical, aggregate, recycling, metals, building products, manufacturing</li>
+          <li>Tie-ins, modifications, reroutes, and full new-scope installs</li>
+          <li>In-shop prefabrication and field installation to ASME B31.1 and B31.3</li>
+          <li>Food-grade sanitary piping and live hot-tap connections</li>
+          <li>Shutdown, turnaround, and outage piping support</li>
+        </ul>
+        <span class="svc-cert">TSSA Certified Pressure Welding, ASME B31.1 &amp; B31.3</span>
+      </div>
+      <div class="svc-photos-side">
+        <img class="tall" src="./assets/photos/stainless-process-piping.jpg" alt="Stainless process piping installation">
+        <img src="./assets/photos/parallel-stainless-pipes.jpg" alt="Parallel stainless piping runs">
+        <img src="./assets/photos/hot-oil-process-piping.jpg" alt="Hot oil process piping">
+      </div>
+    </div>
+    <div class="svc-photostrip">
+      <img src="./assets/photos/stainless-elbow-install.jpg" alt="Installing stainless steel pipe elbows">
+      <img src="./assets/photos/tank-exterior-piping.jpg" alt="Process piping on tank exteriors">
+      <img src="./assets/photos/coffee-distribution-bins.jpg" alt="Sanitary piping for coffee distribution bins">
+      <img src="./assets/photos/hot-air-coffee-piping.jpg" alt="Hot air process piping for coffee roasting">
+    </div>
+  </div>
+</section>
+
+<!-- ============== SERVICE PAGE - ENGINEERING & PM ============== -->
+<section class="page svc-page eng">
+  <div class="svc-hero">
+    <div class="eyebrow">Our Services</div>
+    <h1>Engineering &amp; <span class="accent">Project Management</span></h1>
+  </div>
+  <div class="svc-main">
+    <div class="svc-cols">
+      <div class="svc-text">
+        <h2>One-Contact Industrial Project Execution</h2>
+        <p class="svc-intro">From scope development through completion, ED Industrial manages the full project lifecycle across all mechanical disciplines. AutoCAD drafting, stamped engineering drawings, mechanical and structural design, plant layout, scheduling, field coordination, and multi-trade project management, all under one roof in Milton. When a project needs outside trades alongside the mechanical scope, we coordinate them: electrical, concrete, controls, gas, structural, HVAC. You deal with one contact and one accountable team from the first conversation to the final walkthrough.</p>
+        <ul class="svc-bullets">
+          <li>One-contact approach from scope development to completion</li>
+          <li>AutoCAD drafting and stamped engineering drawings</li>
+          <li>Mechanical and structural design, plant layout, and process design</li>
+          <li>Full project execution across all mechanical disciplines</li>
+          <li>Scope development, scheduling, and field coordination</li>
+          <li>Shutdown turnaround planning and outage coordination</li>
+          <li>Multi-trade industrial project management</li>
+        </ul>
+        <span class="svc-cert">PMP Certified Project Management, Engineer Stamped Designs</span>
+      </div>
+      <div class="svc-photos-side">
+        <img class="tall" src="./assets/photos/engineer-at-workstation.jpg" alt="Engineer at workstation with AutoCAD drawings">
+        <img src="./assets/photos/engineering-drawings-table.jpg" alt="Engineering blueprints and drawings">
+        <img src="./assets/photos/shop-floor.jpg" alt="Shop floor where designs are built">
+        <img src="./assets/photos/solidworks-model-screen.jpg" alt="SolidWorks 3D model on screen">
+      </div>
+    </div>
+    <div class="svc-photostrip strip-2wide">
+      <img class="show-full" src="./assets/photos/office-team.jpg" alt="ED Industrial project and engineering team">
+    </div>
+  </div>
+</section>
+
+<!-- ============== PAGE 4 - PROBAT + GET IN TOUCH ============== -->
+<section class="page body-page">
+  <div class="header-band">
+    <div class="header-band-inner">
+      <div>
+        <div class="eyebrow">Backed By</div>
+        <h2>The PROBAT Group</h2>
+      </div>
+      <img src="./assets/probat-logo.png" alt="PROBAT Group" class="header-band-logo">
+    </div>
+  </div>
+  <div class="probat-body">
+    <p>ED Industrial is part of the PROBAT Group, one of the world's leading manufacturers of food processing machinery. PROBAT builds the machines that process coffee, cocoa, nuts, popcorn, and a wide range of other food products, equipment running in food processing facilities across North America and around the world.</p>
+    <p>That connection puts ED Industrial in a different position than a standard mechanical contractor. We work alongside state of the art food processing machinery every day. That exposure raises the bar for how our crews approach food processing facilities, the standards we hold ourselves to, and the knowledge we bring to every scope in this sector. Sanitary and process piping, equipment installs, line modifications, conveyors, structural platforms and guarding, planned maintenance, and shutdown support.</p>
+    <div class="probat-photos">
+      <img class="land2" src="./assets/photos/probat-transport.jpg" alt="PROBAT coffee transport and handling equipment">
+      <img class="portrait" src="./assets/photos/probat-silos.jpg" alt="Coffee storage silos and bulk handling system">
+      <img class="land" src="./assets/photos/roaster-cooler.jpg" alt="Coffee roaster cooler installation">
+      <img class="portrait" src="./assets/photos/green-coffee-dust-collector.jpg" alt="Green coffee dust collector">
+    </div>
+  </div>
+  <div class="probat-certs">
+    <span class="cert">TSSA Certified Pressure Welding</span>
+    <span class="cert">ASME B31.1 &amp; B31.3</span>
+    <span class="cert">CWB Certified Welding</span>
+    <span class="cert">433A Red Seal Millwrights</span>
+  </div>
+  <div class="contact-section">
+    <div class="contact-heading">
+      <div class="eyebrow">Contact</div>
+      <h2>Get In Touch</h2>
+    </div>
+    <div class="contact-cols">
+      <div class="contact-col">
+        <h3>Reach Us</h3>
+        <p><strong>Phone</strong> &nbsp;(519) 856-1214</p>
+        <p><strong>Email</strong> &nbsp;salescontact@edindustrial.ca</p>
+        <p><strong>Address</strong> &nbsp;2697 Durante Way, Milton, ON L9T 5H5</p>
+      </div>
+      <div class="contact-col">
+        <h3>Areas We Cover</h3>
+        <div class="areas-list">
+          <span>Milton</span>
+          <span>Burlington</span>
+          <span>Oakville</span>
+          <span>Halton Hills</span>
+          <span>Georgetown</span>
+          <span>Mississauga</span>
+          <span>Brampton</span>
+          <span>Hamilton</span>
+          <span>Kitchener-Waterloo</span>
+          <span>Guelph</span>
+          <span>Greater Toronto Area</span>
+          <span>Southern Ontario</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-band">
+    <h2>Ready to talk about your next scope?</h2>
+    <p>Call our team or send your project details by email, and we will get back to you.</p>
+    <span class="cta-phone">(519) 856-1214</span>
+    <span class="cta-email">salescontact@edindustrial.ca</span>
+  </div>
+  <div class="footer-strip">
+    <div class="footer-logo">
+      <img src="./assets/logo-ed-industrial.png" alt="ED Industrial">
+    </div>
+    <span>Part of the PROBAT Group . &copy; 2026 ED Industrial</span>
+  </div>
+</section>
+
+</body>
+</html>
