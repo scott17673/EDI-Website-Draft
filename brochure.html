@@ -926,14 +926,12 @@
     }
     .no-print { display: none !important; }
 
-    /* Glow: drop mix-blend-mode (PDF strips it) and stack three simple 2-stop
-       radials. Each individual gradient only has 2 colors, so PDF can't band
-       them - the layered combination creates a soft glow without visible rings. */
+    /* Glow: very subtle warm tint - PDF strips mix-blend-mode so this is
+       just a soft normal-blend wash, not the bright splash from before */
     .cover-photo-band::before {
       background:
-        radial-gradient(ellipse 9% 7% at 60% 55%, rgba(255,200,130,0.7), transparent 100%),
-        radial-gradient(ellipse 15% 12% at 60% 55%, rgba(255,130,70,0.45), transparent 100%),
-        radial-gradient(ellipse 22% 18% at 60% 55%, rgba(220,70,40,0.30), transparent 100%) !important;
+        radial-gradient(ellipse 5% 4% at 60% 55%, rgba(255,180,110,0.22), transparent 100%),
+        radial-gradient(ellipse 11% 9% at 60% 55%, rgba(220,90,55,0.14), transparent 100%) !important;
       mix-blend-mode: normal !important;
     }
 
